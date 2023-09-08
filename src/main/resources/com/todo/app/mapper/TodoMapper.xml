@@ -23,6 +23,7 @@
   <update id="update" parameterType="com.todo.app.entity.Todo">
     update todo_items set
       title = #{title},
+      category = #{category},
       time_limit = to_date(#{time_limit},'yy-mm-dd'),
       done_flg = #{done_flg}
       where id = #{id}

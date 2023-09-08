@@ -1,5 +1,4 @@
 package com.todo.app.controller;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +30,11 @@ public class TodoController {
 
     @RequestMapping(value="/add")
     public String add(Todo todo) {
+    	if(todo.getCategory()=="") 
+    	{
+    		todo.setCategory("なし");
+    	}
+    	
         todoMapper.add(todo);
         return "redirect:/";
     }
